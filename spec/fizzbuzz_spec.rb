@@ -2,11 +2,13 @@ require "fizzbuzz"
 
 three_tester = 0
 five_tester = 0
+unpopular = 0
 
 loop do
   three_tester = rand(1..100)*3
   five_tester = rand(1..100)*5
-  break if three_tester % 15 != 0 && five_tester % 15 != 0
+  unpopular = rand(1..100)
+  break if three_tester % 15 != 0 && five_tester % 15 != 0 && unpopular % 3 != 0 and unpopular % 5 != 0
 end
 
 
@@ -42,6 +44,10 @@ describe "fizzbuzz" do
 
   it "returns val when passed number not divisible by 3 or 5" do
     expect(fizzbuzz(7)).to eq 7
+  end
+
+  it "returns buzz when passed RANDOM number not divisible by 3 or 5" do
+    expect(fizzbuzz(unpopular)).to eq unpopular
   end
 
 end
