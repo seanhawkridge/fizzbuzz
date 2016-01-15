@@ -21,4 +21,12 @@ describe "fizzbuzz" do
     expect(fizzbuzz(15*rand(1..100))).to eq "fizzbuzz"
   end
 
+  it "returns fizz when passed random number divisible by 3" do
+    expect(fizzbuzz(3*rand(1..100))).to eq "fizz"
+  end
+
+  it "returns buzz when passed random number divisible by 5" do
+    expect(fizzbuzz(5*rand(1..100))).to eq "buzz"
+  end
+
 end
